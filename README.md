@@ -20,6 +20,13 @@
   - Add module/repository :white_check_mark:
   - Add provider
 
+## SOLID Principles
+- S: Single-responsibility Principle :white_check_mark:
+- O: Open-closed Principle
+- L: Liskov Substitution Principle :white_check_mark:
+- I: Interface Segregation Principle 
+- D: Dependency Inversion Principle :white_check_mark:
+
 # External configs
 
 ### ESlint
@@ -29,3 +36,5 @@
   ```
     "editor.codeActionsOnSave": { "source.fixAll": true, "source.fixAll.eslint": true }
   ```
+
+

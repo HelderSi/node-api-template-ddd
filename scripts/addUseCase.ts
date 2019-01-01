@@ -107,10 +107,26 @@ export { ${useCaseName}Controller };
         writeFile(`${filePath}/${useCaseName}Controller.spec.ts`,
             `import request from 'supertest'
 import { app } from 'shared/infra/http/app'
+import { ${useCaseName}UseCase } from './${useCaseName}UseCase'
+
 
 const appRequest = request(app)
 
 describe('${useCaseName} Controller', () => {
+
+    const CURRENT_ENV = { ...process.env }; // Make a copy of environment
+
+    beforeEach(() => {
+        process.env = CURRENT_ENV; // Restore original environment
+        const useCaseSpy = jest.spyOn(${useCaseName}UseCase.prototype, 'execute');
+        useCaseSpy.mockResolvedValue({
+            
+        });
+    })
+
+    afterAll(() => {
+        process.env = CURRENT_ENV; // Restore original environment
+    });
 
     it('should response with 200', async () => {
         const response = await appRequest.get('/')
