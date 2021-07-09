@@ -11,6 +11,4 @@ const createFooController = new CreateFooController(
     createFooUseCase
 );
 
-console.log(createFooController)
-
 export { createFooController };
