@@ -1,7 +1,10 @@
 # DDD based NodeJS API template
 
-- TS
+- Typescript
 - ExpressJS
+- Swagger Docs
+- SOLID principles
+- 
 
 # External configs
 
@@ -9,4 +12,6 @@
 
 - Install ESLint plugin on VSCode
 - VSCode settings
-  `"editor.codeActionsOnSave": { "source.fixAll": true, "source.fixAll.eslint": true }`
+  `
+    "editor.codeActionsOnSave": { "source.fixAll": true, "source.fixAll.eslint": true }
+  `

@@ -1,0 +1,44 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title":"Template for NodeJS API",
+        "description": "NodeJS API with typescript and Express following DDD principles",
+        "version": "0.1.0",
+        "contact": {
+            "email": "helder.dds@gmail.com"
+        }
+    },
+    "paths": {
+        "/api/foos": {
+            "post": {
+                "tags": ["Foos"],
+                "summary": "Create a new foo",
+                "description": "",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name":{"type": "string"}
+                                },
+                                "example": {
+                                    "name": "Another Foo"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Error"
+                    }
+
+                }
+            }
+        }
+    }
+}

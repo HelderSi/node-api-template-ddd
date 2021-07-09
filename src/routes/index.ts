@@ -4,6 +4,6 @@ import { foosRoutes } from "./foos.routes";
 
 const router = Router();
 
-router.use("/foos", foosRoutes);
+router.use("/api/foos", foosRoutes);
 
 export { router };
