@@ -1,0 +1,29 @@
+{
+  "name": "node-ddd-api-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:HelderSi/node-ddd-api-template.git",
+  "author": "Helder Silva <helder.dds@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "add": "^2.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+  }
+}
