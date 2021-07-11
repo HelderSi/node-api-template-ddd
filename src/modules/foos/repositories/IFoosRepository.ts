@@ -1,4 +1,4 @@
-import { Foo } from "../entities/Foo";
+import { IFoo } from "../models/IFoo";
 import {
   ICreateFooDTO,
 } from "../dtos/IFooDTO";
@@ -7,8 +7,8 @@ import {
  */
 
 interface IFoosRepository {
-  findByName(name: string): Foo | undefined;
-  list(): Foo[];
+  findByName(name: string): IFoo | undefined;
+  list(): IFoo[];
   create({ name }: ICreateFooDTO): void;
 }
 

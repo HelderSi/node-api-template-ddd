@@ -1,10 +1,10 @@
-import { Foo } from "../../infra/someORM/entities/Foo";
+import { Foo } from "../entities/Foo";
 import {
   ICreateFooDTO,
-} from "../../dtos/IFooDTO";
+} from "modules/foos/dtos/IFooDTO";
 import {
   IFoosRepository
-} from "../IFoosRepository";
+} from "modules/foos/repositories/IFoosRepository";
 
 class FoosRepository implements IFoosRepository {
   private foos: Foo[];
