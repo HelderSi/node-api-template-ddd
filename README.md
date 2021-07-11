@@ -4,7 +4,7 @@
 - ExpressJS
 - Swagger Docs
 - SOLID principles
-- 
+- Docker & Docker compose
 
 # External configs
 
@@ -12,6 +12,6 @@
 
 - Install ESLint plugin on VSCode
 - VSCode settings
-  `
+  ```
     "editor.codeActionsOnSave": { "source.fixAll": true, "source.fixAll.eslint": true }
-  `
+  ```

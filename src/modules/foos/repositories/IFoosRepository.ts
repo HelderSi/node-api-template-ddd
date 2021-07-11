@@ -1,16 +1,13 @@
-import { Foo } from "../models/Foo";
-
+import { Foo } from "../entities/Foo";
+import {
+  ICreateFooDTO,
+} from "../dtos/IFooDTO";
 /**
  * SOLID - LSP (Liskov Substitution Principle)
  */
 
-// DTO => Data transfer object
-interface ICreateFooDTO {
-  name: string;
-}
-
 interface IFoosRepository {
-  findByName(name: string): Foo;
+  findByName(name: string): Foo | undefined;
   list(): Foo[];
   create({ name }: ICreateFooDTO): void;
 }

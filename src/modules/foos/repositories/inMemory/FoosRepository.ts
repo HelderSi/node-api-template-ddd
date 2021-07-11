@@ -1,6 +1,8 @@
-import { Foo } from "../../models/Foo";
+import { Foo } from "../../entities/Foo";
 import {
   ICreateFooDTO,
+} from "../../dtos/IFooDTO";
+import {
   IFoosRepository
 } from "../IFoosRepository";
 
@@ -40,7 +42,7 @@ class FoosRepository implements IFoosRepository {
     return this.foos;
   }
 
-  findByName(name: string): Foo {
+  findByName(name: string): Foo | undefined {
     const foo = this.foos.find((foo) => foo.name === name);
 
     return foo;

@@ -18,13 +18,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name":{"type": "string"}
-                                },
-                                "example": {
-                                    "name": "Another Foo"
-                                }
+                                "$ref": "#/definitions/Foo"
                             }
                         }
                     }
@@ -38,6 +32,17 @@
                     }
 
                 }
+            }
+        }
+    },
+    "definitions":{
+        "Foo": {
+            "type": "object",
+            "properties": {
+                "name":{"type": "string"}
+            },
+            "example": {
+                "name": "Another Foo"
             }
         }
     }
