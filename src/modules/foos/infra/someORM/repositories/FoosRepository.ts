@@ -20,7 +20,7 @@ class FoosRepository implements IFoosRepository {
    */
   public static getInstance(): FoosRepository {
     if (!FoosRepository.INSTANCE) {
-        FoosRepository.INSTANCE = new FoosRepository();
+      FoosRepository.INSTANCE = new FoosRepository();
     }
 
     return FoosRepository.INSTANCE;

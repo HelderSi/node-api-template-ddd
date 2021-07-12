@@ -12,6 +12,7 @@
 - Request validators with Celebrate :white_check_mark:
 - Unit tests with Jest
 - Integration tests with Supertest
+- CLI snippets
 
 # External configs
 
