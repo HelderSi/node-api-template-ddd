@@ -1,3 +1,4 @@
+import { AppError } from "shared/errors/AppError";
 import { IFoosRepository } from "../../repositories/IFoosRepository";
 
 interface IRequest {
@@ -22,7 +23,7 @@ class CreateFooUseCase {
      * - Uncouple my code's dependency from "Express"
      */
     if (fooAlreadyExists) {
-      throw new Error("Foo already exists!");
+      throw new AppError("Foo already exists!", 400);
     }
 
     this.foosRepository.create({ name });

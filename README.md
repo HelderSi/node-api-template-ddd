@@ -2,9 +2,14 @@
 
 - Typescript
 - ExpressJS
-- Swagger Docs
+- Swagger Docs UI
 - SOLID principles
 - Docker & Docker compose
+- Error handler
+- CORS with multi origins
+- Celebrate validations
+- Dotenv
+- Date provider with DayJS
 
 # External configs
 
