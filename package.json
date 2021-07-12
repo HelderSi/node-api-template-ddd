@@ -6,6 +6,7 @@
   "author": "Helder Silva <helder.dds@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "celebrate": "^15.0.0",
     "cors": "^2.8.5",
     "dayjs": "^1.10.6",
     "dotenv": "^10.0.0",

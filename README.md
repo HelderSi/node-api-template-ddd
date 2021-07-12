@@ -9,7 +9,7 @@
 - CORS with multi origins :white_check_mark:
 - Dotenv :white_check_mark:
 - Date provider with DayJS :white_check_mark:
-- Celebrate validations 
+- Request validators with Celebrate :white_check_mark:
 - Unit tests with Jest
 - Integration tests with Supertest
 
