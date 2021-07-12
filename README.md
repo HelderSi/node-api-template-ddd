@@ -8,7 +8,7 @@
 - Error handler :white_check_mark:
 - CORS with multi origins :white_check_mark:
 - Dotenv :white_check_mark:
-- Date provider with DayJS
+- Date provider with DayJS :white_check_mark:
 - Celebrate validations 
 - 
 
