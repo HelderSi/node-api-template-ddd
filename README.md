@@ -1,15 +1,16 @@
 # DDD based NodeJS API template
 
-- Typescript
-- ExpressJS
-- Swagger Docs UI
-- SOLID principles
-- Docker & Docker compose
-- Error handler
-- CORS with multi origins
-- Celebrate validations
-- Dotenv
+- Typescript :white_check_mark:
+- ExpressJS :white_check_mark:
+- Swagger Docs UI :white_check_mark:
+- SOLID principles :white_check_mark:
+- Docker & Docker compose :white_check_mark:
+- Error handler :white_check_mark:
+- CORS with multi origins :white_check_mark:
+- Dotenv :white_check_mark:
 - Date provider with DayJS
+- Celebrate validations 
+- 
 
 # External configs
 
