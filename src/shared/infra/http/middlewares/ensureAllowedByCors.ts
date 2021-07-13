@@ -5,10 +5,12 @@ const allowedOrigins: (string | undefined)[] = [
     'http://your.domain.here',
 ];
 
-if (appConfig.env === 'development') {
+if (appConfig.env === 'development' || appConfig.isTesting) {
     allowedOrigins.push('*');
     allowedOrigins.push(undefined);
 }
+
+
 
 const corsOptions: CorsOptions = {
     origin: function (origin, callback) {

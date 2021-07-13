@@ -11,7 +11,7 @@
 - Date provider with DayJS :white_check_mark:
 - Request validators with Celebrate :white_check_mark:
 - Unit tests with Jest :white_check_mark:
-- Integration tests with Supertest
+- Integration tests with Supertest :white_check_mark:
 - CLI snippets
 
 # External configs
