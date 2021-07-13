@@ -7,9 +7,9 @@ import {
  */
 
 interface IFoosRepository {
-  findByName(name: string): IFoo | undefined;
-  list(): IFoo[];
-  create({ name }: ICreateFooDTO): void;
+  findByName(name: string): Promise<IFoo | undefined>;
+  list(): Promise<IFoo[]>;
+  create({ name }: ICreateFooDTO): Promise<void>;
 }
 
 export { ICreateFooDTO, IFoosRepository };

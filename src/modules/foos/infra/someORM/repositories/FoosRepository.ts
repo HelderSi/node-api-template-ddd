@@ -26,7 +26,7 @@ class FoosRepository implements IFoosRepository {
     return FoosRepository.INSTANCE;
   }
 
-  create({ name }: ICreateFooDTO): void {
+  async create({ name }: ICreateFooDTO): Promise<void> {
     const foo = new Foo();
 
     // taking an object and assigning data
@@ -38,11 +38,11 @@ class FoosRepository implements IFoosRepository {
     this.foos.push(foo);
   }
 
-  list(): Foo[] {
+  async list(): Promise<Foo[]> {
     return this.foos;
   }
 
-  findByName(name: string): Foo | undefined {
+  async findByName(name: string): Promise<Foo | undefined> {
     const foo = this.foos.find((foo) => foo.name === name);
 
     return foo;

@@ -1,10 +1,10 @@
 
-import { FoosRepository } from "../../repositories/inMemory/FoosRepository";
+import { FoosRepositoryInMemory } from "../../repositories/inMemory/FoosRepositoryInMemory";
 import { CreateFooController } from "./CreateFooController";
 import { CreateFooUseCase } from "./CreateFooUseCase";
 
 export default function (): CreateFooController {
-    const foosRepository = FoosRepository.getInstance();
+    const foosRepository = FoosRepositoryInMemory.getInstance();
 
     const createFooUseCase = new CreateFooUseCase(foosRepository);
 

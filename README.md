@@ -10,7 +10,7 @@
 - Dotenv :white_check_mark:
 - Date provider with DayJS :white_check_mark:
 - Request validators with Celebrate :white_check_mark:
-- Unit tests with Jest
+- Unit tests with Jest :white_check_mark:
 - Integration tests with Supertest
 - CLI snippets
 

@@ -13,8 +13,8 @@ class CreateFooUseCase {
    */
   constructor(private foosRepository: IFoosRepository) { }
 
-  execute({ name }: IRequest): void {
-    const fooAlreadyExists = this.foosRepository.findByName(name);
+  async execute({ name }: IRequest): Promise<void> {
+    const fooAlreadyExists = await this.foosRepository.findByName(name);
 
     /**
      *  SOLID - SRP (Single Responsibility Principle)
@@ -26,7 +26,7 @@ class CreateFooUseCase {
       throw new AppError("Foo already exists!", 400);
     }
 
-    this.foosRepository.create({ name });
+    await this.foosRepository.create({ name });
   }
 }
 
