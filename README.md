@@ -13,9 +13,9 @@
 - Unit tests with Jest :white_check_mark:
 - Integration tests with Supertest :white_check_mark:
 - CLI snippets:
--- Add module :white_check_mark:
--- Add module/useCase :white_check_mark:
--- Add provider
+  - Add module :white_check_mark:
+  - Add module/useCase :white_check_mark:
+  - Add provider
 
 # External configs
 
@@ -23,6 +23,6 @@
 
 - Install ESLint plugin on VSCode
 - VSCode settings
-  ```
+  ~~~
     "editor.codeActionsOnSave": { "source.fixAll": true, "source.fixAll.eslint": true }
-  ```
+  ~~~
