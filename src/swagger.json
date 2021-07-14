@@ -9,7 +9,7 @@
         }
     },
     "paths": {
-        "/api/foos": {
+        "/api/v1/foos": {
             "post": {
                 "tags": ["Foos"],
                 "summary": "Create a new foo",

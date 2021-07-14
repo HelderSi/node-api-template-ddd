@@ -1,32 +1,6 @@
 #!/bin/node
-import * as fs from 'fs'
-
-function writeFile(path, fileContent) {
-  const fileAlreadyExists = fs.existsSync(path);
-  if (fileAlreadyExists){
-    console.log(
-      `${path} already exists.`,
-    );
-    process.exit(1);
-  }
-  if (fileContent) {
-    fs.writeFile(path, fileContent, err => {
-      if (err) {
-        console.log('Damn it! Something went wrong. =(');
-        throw err;
-      }
-    });
-  }
-}
-
-function createFolder(folderName) {
-    const folderAlreadyExists = fs.existsSync(folderName);
-    if (folderAlreadyExists) {
-        console.log(`Module already exists`);
-        process.exit(1);
-      }
-      fs.mkdirSync(folderName);
-}
+import createFolder from "./createFolder";
+import writeFile from "./writeFile";
 
 export default {
   execute: (args: string[]) => {
@@ -35,9 +9,32 @@ export default {
       console.log(`Module name not informed`);
       process.exit(1);
     }
-  
-    console.log(`Adding new module: ${moduleName}...`);
-  
+
+    console.log(`Adding new module: ${moduleName}`);
+
     createFolder(`src/modules/${moduleName}`);
+    createFolder(`src/modules/${moduleName}/useCases`);
+    createFolder(`src/modules/${moduleName}/dtos`);
+    createFolder(`src/modules/${moduleName}/models`);
+    createFolder(`src/modules/${moduleName}/repositories`);
+    createFolder(`src/modules/${moduleName}/repositories/inMemory`);
+    createFolder(`src/modules/${moduleName}/infra`);
+    createFolder(`src/modules/${moduleName}/infra/http`);
+    createFolder(`src/modules/${moduleName}/infra/someorm`);
+
+
+    createFolder(`src/modules/${moduleName}/infra/http/middlewares`);
+    createFolder(`src/modules/${moduleName}/infra/http/middlewares/validators`);
+
+    createFolder(`src/modules/${moduleName}/infra/http/routes`);
+    writeFile(`src/modules/${moduleName}/infra/http/routes/index.ts`, `
+import { Router } from "express";
+
+const ${moduleName}Routes = Router();
+
+${moduleName}Routes.get("/", (request, response) => response.status(200).send({}));
+
+export { ${moduleName}Routes };
+    `)
   }
 }

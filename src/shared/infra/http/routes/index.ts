@@ -7,6 +7,6 @@ const router = Router();
 
 router.use(ensureAllowedByCors)
 
-router.use("/api/foos", foosRoutes);
+router.use("/api/v1/foos", foosRoutes);
 
 export { router };
