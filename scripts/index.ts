@@ -1,4 +1,5 @@
 import addModule from './addModule'
+import addRepository from './addRepository';
 import addUseCase from './addUseCase';
 
 
@@ -9,8 +10,9 @@ const target = process.argv[3];
 const cmds = {
     'add': {
         'module': addModule,
+        'usecase': addUseCase,
+        'repository': addRepository,
         'provider': () => { },
-        'usecase': addUseCase
     }
 }
 

@@ -1,7 +1,7 @@
 import { IFoo } from "../models/IFoo";
 import {
   ICreateFooDTO,
-} from "../dtos/IFooDTO";
+} from "../dtos/ICreateFooDTO";
 /**
  * SOLID - LSP (Liskov Substitution Principle)
  */
@@ -12,4 +12,4 @@ interface IFoosRepository {
   create({ name }: ICreateFooDTO): Promise<void>;
 }
 
-export { ICreateFooDTO, IFoosRepository };
+export { IFoosRepository };

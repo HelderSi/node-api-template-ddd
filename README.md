@@ -15,6 +15,7 @@
 - CLI snippets:
   - Add module :white_check_mark:
   - Add module/useCase :white_check_mark:
+  - Add module/repository :white_check_mark:
   - Add provider
 
 # External configs

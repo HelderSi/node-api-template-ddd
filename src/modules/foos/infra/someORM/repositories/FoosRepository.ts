@@ -1,7 +1,7 @@
 import { Foo } from "../entities/Foo";
 import {
   ICreateFooDTO,
-} from "modules/foos/dtos/IFooDTO";
+} from "modules/foos/dtos/ICreateFooDTO";
 import {
   IFoosRepository
 } from "modules/foos/repositories/IFoosRepository";

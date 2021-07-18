@@ -1,6 +1,6 @@
 #!/bin/node
-import createFolder from "./createFolder";
-import writeFile from "./writeFile";
+import createFolder from "./utils/createFolder";
+import writeFile from "./utils/writeFile";
 
 export default {
   execute: (args: string[]) => {
@@ -14,10 +14,7 @@ export default {
 
     createFolder(`src/modules/${moduleName}`);
     createFolder(`src/modules/${moduleName}/useCases`);
-    createFolder(`src/modules/${moduleName}/dtos`);
     createFolder(`src/modules/${moduleName}/models`);
-    createFolder(`src/modules/${moduleName}/repositories`);
-    createFolder(`src/modules/${moduleName}/repositories/inMemory`);
     createFolder(`src/modules/${moduleName}/infra`);
     createFolder(`src/modules/${moduleName}/infra/http`);
     createFolder(`src/modules/${moduleName}/infra/someorm`);

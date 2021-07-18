@@ -1,14 +1,8 @@
 #!/bin/node
-import createFolder from "./createFolder";
-import writeFile from "./writeFile";
-
-function toCamelCase(name: string) {
-    return name.charAt(0).toLocaleLowerCase() + name.slice(1);
-}
-
-function capitalize(name: string) {
-    return name.charAt(0).toLocaleUpperCase() + name.slice(1);
-}
+import createFolder from "./utils/createFolder";
+import writeFile from "./utils/writeFile";
+import capitalize from "./utils/capitalize";
+import toCamelCase from "./utils/toCamelCase";
 
 export default {
     execute: (args: string[]) => {
@@ -35,8 +29,8 @@ export default {
 
         const filePath = `src/modules/${moduleName}/useCases/${useCaseNameCamelCase}`
         createFolder(filePath);
-        writeFile(`${filePath}/${useCaseName}UseCase.ts`, `
-import { AppError } from "shared/errors/AppError";
+        writeFile(`${filePath}/${useCaseName}UseCase.ts`,
+            `import { AppError } from "shared/errors/AppError";
 
 interface IRequest {
 }
@@ -53,8 +47,8 @@ class ${useCaseName}UseCase {
 export { ${useCaseName}UseCase };
     `)
 
-        writeFile(`${filePath}/${useCaseName}UseCase.spec.ts`, `
-import { AppError } from "shared/errors/AppError";
+        writeFile(`${filePath}/${useCaseName}UseCase.spec.ts`,
+            `import { AppError } from "shared/errors/AppError";
 import { ${useCaseName}UseCase } from "./${useCaseName}UseCase"
 
 let ${useCaseNameCamelCase}UseCase: ${useCaseName}UseCase;
@@ -78,8 +72,8 @@ describe("${useCaseName}UseCase", () => {
 
 
 
-        writeFile(`${filePath}/${useCaseName}Controller.ts`, `
-import { Request, Response } from "express";
+        writeFile(`${filePath}/${useCaseName}Controller.ts`,
+            `import { Request, Response } from "express";
 
 import { ${useCaseName}UseCase } from "./${useCaseName}UseCase";
 
@@ -99,8 +93,8 @@ export { ${useCaseName}Controller };
     `)
 
 
-        writeFile(`${filePath}/${useCaseName}Controller.spec.ts`, `
-import request from 'supertest'
+        writeFile(`${filePath}/${useCaseName}Controller.spec.ts`,
+            `import request from 'supertest'
 import { app } from 'shared/infra/http/app'
 
 const appRequest = request(app)
@@ -108,14 +102,14 @@ const appRequest = request(app)
 describe('${useCaseName} Controller', () => {
 
     it('should response with 200', async () => {
-        const response = await appRequest.post('/').send({})
+        const response = await appRequest.get('/')
         expect(response.status).toBe(200)
     })
 })
     `)
 
-        writeFile(`${filePath}/index.ts`, `
-import { ${useCaseName}Controller } from "./${useCaseName}Controller";
+        writeFile(`${filePath}/index.ts`,
+            `import { ${useCaseName}Controller } from "./${useCaseName}Controller";
 import { ${useCaseName}UseCase } from "./${useCaseName}UseCase";
 
 export default function (): ${useCaseName}Controller {
