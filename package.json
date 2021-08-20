@@ -52,7 +52,7 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "build": "babel src --extensions \".js,.ts\" --out-dir build --copy-files",
     "cli:build": "babel scripts --extensions \".js,.ts\" --out-dir bin --copy-files",
-    "cli": "yarn scripts:build && node ./bin/index.js ",
+    "cli": "yarn cli:build && node ./bin/index.js ",
     "docker:build": "docker build -t node-ddd-api-template .",
     "docker:run": "docker run --name template_api -p 3333:3333 node-ddd-api-template",
     "docker:stop": "docker stop template_api",
