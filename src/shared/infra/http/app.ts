@@ -1,8 +1,7 @@
 import express from "express";
 import swaggerUi from 'swagger-ui-express'
 import 'express-async-errors';
-import { errors as celebrateErrors } from 'celebrate';
-import cors, { CorsOptions } from 'cors';
+import cors from 'cors';
 
 import errorHandle from 'shared/errors'
 import { router } from './routes'
@@ -16,10 +15,8 @@ app.use(cors())
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-app.use('/api/v1', router)
+app.use('/v1', router)
 
 app.use(errorHandle);
-
-app.use(celebrateErrors());
 
 export { app }

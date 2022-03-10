@@ -52,19 +52,33 @@ const CODES = {
     }
 }
 
+type ErrorDetailType = {
+    message: string;
+    source: string;
+    key: string;
+}
+
 export class AppError {
     public readonly message: string;
 
-    public readonly statusCode: number;
-
     private readonly success: boolean;
 
-    private readonly error: string;
+    public readonly error: {
+        code: number;
+        message: string;
+        constant: string;
+        details: ErrorDetailType[]
+    };
 
-    constructor(message: string, statusCode = 400) {
-        this.message = message;
-        this.statusCode = statusCode;
-        this.error = CODES[statusCode]?.phrase || CODES[400].phrase;
+    constructor(message?: string, statusCode = 400, options?: { details?: ErrorDetailType[] }) {
+        const errorMessage = message || CODES[statusCode]?.phrase || CODES[400].phrase;
         this.success = false;
+        this.message = errorMessage;
+        this.error = {
+            code: statusCode,
+            message: errorMessage,
+            constant: CODES[statusCode]?.constant || CODES[400].constant,
+            details: options?.details || []
+        };
     }
 }
