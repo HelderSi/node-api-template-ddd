@@ -12,6 +12,8 @@
 - Request validators with Celebrate :white_check_mark:
 - Unit tests with Jest :white_check_mark:
 - Integration tests with Supertest :white_check_mark:
+- Sentry
+- Request Rate Limit
 - CLI snippets:
   - Add module :white_check_mark:
   - Add module/useCase :white_check_mark:
@@ -24,6 +26,6 @@
 
 - Install ESLint plugin on VSCode
 - VSCode settings
-  ~~~
+  ```
     "editor.codeActionsOnSave": { "source.fixAll": true, "source.fixAll.eslint": true }
-  ~~~
+  ```

@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { SuccessResponseModel } from "shared/infra/http/models/SuccessResponseModel";
 
 import { CreateFooUseCase } from "./CreateFooUseCase";
 
@@ -10,7 +11,11 @@ class CreateFooController {
 
     this.createFooUseCase.execute({ name })
 
-    return response.status(201).send();
+    return response.status(201).send({
+      success: true,
+      message: 'Success',
+      payload: null
+    } as SuccessResponseModel<null>);
   }
 }
 
