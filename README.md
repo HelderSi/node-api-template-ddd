@@ -25,7 +25,7 @@
 - O: Open-closed Principle
 - L: Liskov Substitution Principle :white_check_mark:
 - I: Interface Segregation Principle 
-- D: Dependency Inversion Principle :white_check_mark:
+- D: Dependency Inversion Principle (with [TSyringe](https://github.com/microsoft/tsyringe)) :white_check_mark:
 
 # External configs
 
