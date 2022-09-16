@@ -1,9 +1,14 @@
-# DDD based NodeJS API template
+# SOLID principles based NodeJS API template
 
+- SOLID Principles:
+  - S: Single-responsibility Principle :white_check_mark:
+  - O: Open-closed Principle
+  - L: Liskov Substitution Principle :white_check_mark:
+  - I: Interface Segregation Principle 
+  - D: Dependency Inversion Principle (with [TSyringe](https://github.com/microsoft/tsyringe)) :white_check_mark:
 - Typescript :white_check_mark:
 - ExpressJS :white_check_mark:
 - Swagger Docs UI :white_check_mark:
-- SOLID principles :white_check_mark:
 - Docker & Docker compose :white_check_mark:
 - Error handler :white_check_mark:
 - CORS with multi origins :white_check_mark:
@@ -20,12 +25,7 @@
   - Add module/repository :white_check_mark:
   - Add provider
 
-## SOLID Principles
-- S: Single-responsibility Principle :white_check_mark:
-- O: Open-closed Principle
-- L: Liskov Substitution Principle :white_check_mark:
-- I: Interface Segregation Principle 
-- D: Dependency Inversion Principle (with [TSyringe](https://github.com/microsoft/tsyringe)) :white_check_mark:
+
 
 # External configs
 
