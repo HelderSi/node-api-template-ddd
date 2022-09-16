@@ -17,9 +17,10 @@
 - Request validators with Celebrate :white_check_mark:
 - Unit tests with Jest :white_check_mark:
 - Integration tests with Supertest :white_check_mark:
+- Tests Coverage Reports :white_check_mark:
 - Sentry
 - Request Rate Limit
-- CLI snippets:
+- CLI:
   - Add module :white_check_mark:
   - Add module/useCase :white_check_mark:
   - Add module/repository :white_check_mark:

@@ -4,4 +4,6 @@
 
 /bin
 
+/tests_coverage
+
 .env
