@@ -1,15 +1,16 @@
+import { container } from "tsyringe"
 import { Request, Response } from "express";
 import { SuccessResponseModel } from "shared/infra/http/models/SuccessResponseModel";
 
 import { CreateFooUseCase } from "./CreateFooUseCase";
 
 class CreateFooController {
-  constructor(private createFooUseCase: CreateFooUseCase) { }
 
-  handle(request: Request, response: Response): Response {
+  async handle(request: Request, response: Response): Promise<Response> {
     const { name } = request.body;
 
-    this.createFooUseCase.execute({ name })
+    const createFooUseCase = container.resolve(CreateFooUseCase)
+    await createFooUseCase.execute({ name })
 
     return response.status(201).send({
       success: true,

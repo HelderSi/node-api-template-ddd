@@ -1,9 +1,10 @@
 import 'dotenv/config';
+import "reflect-metadata";
 import express from "express";
 import swaggerUi from 'swagger-ui-express'
 import 'express-async-errors';
 import cors from 'cors';
-
+import "shared/container"
 import errorHandle from 'shared/errors'
 import { router } from './routes'
 //import swaggerFile from '../../../swagger.json'

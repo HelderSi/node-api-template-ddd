@@ -7,24 +7,7 @@ import {
 } from "modules/foos/repositories/IFoosRepository";
 
 class FoosRepository implements IFoosRepository {
-  private foos: Foo[];
-
-  private static INSTANCE: FoosRepository;
-
-  private constructor() {
-    this.foos = [];
-  }
-
-  /**
-   * Singleton Pattern
-   */
-  public static getInstance(): FoosRepository {
-    if (!FoosRepository.INSTANCE) {
-      FoosRepository.INSTANCE = new FoosRepository();
-    }
-
-    return FoosRepository.INSTANCE;
-  }
+  private foos: Foo[] = [];
 
   async create({ name }: ICreateFooDTO): Promise<void> {
     const foo = new Foo();

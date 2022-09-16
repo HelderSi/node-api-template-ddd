@@ -1,3 +1,4 @@
+import { inject, injectable } from 'tsyringe'
 import { AppError } from "shared/errors/AppError";
 import { IFoosRepository } from "../../repositories/IFoosRepository";
 
@@ -5,13 +6,17 @@ interface IRequest {
   name: string;
 }
 
+@injectable()
 class CreateFooUseCase {
   /**
    * SOLID - DIP (Dependency Inversion Principle)
    * The "service" doesn't need to know what kind of storage we're using. Therefore,
    * we declare the database access object in the constructor
    */
-  constructor(private foosRepository: IFoosRepository) { }
+  constructor(
+    @inject("FoosRepository")
+    private foosRepository: IFoosRepository
+  ) { }
 
   async execute({ name }: IRequest): Promise<void> {
     const fooAlreadyExists = await this.foosRepository.findByName(name);
