@@ -1,6 +1,6 @@
 # SOLID principles based NodeJS API template
 
-## Features:
+## Features
 - SOLID Principles:
   - S: Single-responsibility Principle :white_check_mark:
   - O: Open-closed Principle
@@ -28,7 +28,7 @@
   - Add provider
 
 
-## Env:
+## Env
 ### Enable Rate Limiter
 ```
 RATE_LIMITER_ENABLED=1
