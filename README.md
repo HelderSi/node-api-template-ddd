@@ -1,5 +1,6 @@
 # SOLID principles based NodeJS API template
 
+## Features:
 - SOLID Principles:
   - S: Single-responsibility Principle :white_check_mark:
   - O: Open-closed Principle
@@ -18,7 +19,7 @@
 - Unit tests with Jest :white_check_mark:
 - Integration tests with Supertest :white_check_mark:
 - Tests Coverage Reports :white_check_mark:
-- Sentry
+- Sentry :white_check_mark:
 - Rate Limiter with [node-rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible) :white_check_mark:
 - CLI:
   - Add module :white_check_mark:
@@ -26,6 +27,18 @@
   - Add module/repository :white_check_mark:
   - Add provider
 
+
+## Env:
+### Enable Rate Limiter
+```
+RATE_LIMITER_ENABLED=1
+```
+
+### Enable Sentry
+```
+SENTRY_ENABLED=1
+SENTRY_DSN=https://your-sentry-dsn-domain
+```
 
 
 
