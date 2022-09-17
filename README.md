@@ -19,7 +19,7 @@
 - Integration tests with Supertest :white_check_mark:
 - Tests Coverage Reports :white_check_mark:
 - Sentry
-- Request Rate Limit
+- Rate Limiter with [node-rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible)
 - CLI:
   - Add module :white_check_mark:
   - Add module/useCase :white_check_mark:

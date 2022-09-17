@@ -6,6 +6,9 @@ import swaggerUi from 'swagger-ui-express'
 import 'express-async-errors';
 import cors from 'cors';
 import errorHandle from 'shared/errors'
+import AppConfig from 'config/app'
+
+import rateLimiter from './middlewares/rateLimiter';
 import { router } from './routes'
 //import swaggerFile from '../../../swagger.json'
 
@@ -16,6 +19,10 @@ const app = express();
 app.use(express.json());
 
 app.use(cors())
+
+if (AppConfig.rateLimiter.enabled) {
+    app.use(rateLimiter);
+}
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification, {
     //customCss: '.swagger-ui .topbar .link img { content: url("https://www.myapp.com/logo.png"); margin: 8px }',
