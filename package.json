@@ -6,6 +6,8 @@
   "author": "Helder Silva <helder.dds@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@sentry/node": "^7.13.0",
+    "@sentry/tracing": "^7.13.0",
     "celebrate": "^15.0.0",
     "cors": "^2.8.5",
     "dayjs": "^1.10.6",
