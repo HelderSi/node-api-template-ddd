@@ -1,4 +1,4 @@
-import { FoosRepositoryInMemory } from "modules/foos/repositories/inMemory/FoosRepositoryInMemory"
+import { FoosRepositoryInMemory } from "modules/foos/infra/db/inMemory/repositories/FoosRepositoryInMemory"
 import { AppError } from "shared/errors/AppError";
 import { CreateFooUseCase } from "./CreateFooUseCase"
 

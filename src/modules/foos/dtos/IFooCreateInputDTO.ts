@@ -1,4 +1,4 @@
 // DTO => Data transfer object
-export interface ICreateFooDTO {
+export interface IFooCreateInputDTO {
     name: string;
 }

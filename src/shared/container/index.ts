@@ -1,4 +1,4 @@
-import { FoosRepository } from 'modules/foos/infra/someORM/repositories/FoosRepository'
+import { FoosRepository } from 'modules/foos/infra/db/someORM/repositories/FoosRepository'
 import { IFoosRepository } from 'modules/foos/repositories/IFoosRepository'
 import { container, } from 'tsyringe'
 

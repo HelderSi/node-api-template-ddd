@@ -2,14 +2,14 @@ import { v4 as uuidv4 } from "uuid";
 import { IFoo } from "modules/foos/models/IFoo";
 
 class Foo implements IFoo {
-  id?: string;
+  id: string;
   name: string;
   created_at: Date;
 
-  constructor() {
-    if (!this.id) {
-      this.id = uuidv4();
-    }
+  constructor(name: string) {
+    this.name = name
+    this.id = uuidv4();
+    this.created_at = new Date()
   }
 }
 

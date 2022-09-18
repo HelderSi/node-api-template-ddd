@@ -1,5 +1,5 @@
 export interface IFoo {
-    id?: string;
+    id: string;
     name: string;
     created_at: Date;
 }

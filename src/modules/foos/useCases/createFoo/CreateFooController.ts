@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { SuccessResponseModel } from "shared/infra/http/models/SuccessResponseModel";
 
 import { CreateFooUseCase } from "./CreateFooUseCase";
+import { IFooCreateOutputDTO } from "modules/foos/dtos/IFooCreateOutputDTO";
 
 class CreateFooController {
 
@@ -10,13 +11,13 @@ class CreateFooController {
     const { name } = request.body;
 
     const createFooUseCase = container.resolve(CreateFooUseCase)
-    await createFooUseCase.execute({ name })
+    const createdFoo = await createFooUseCase.execute({ name })
 
     return response.status(201).send({
       success: true,
       message: 'Success',
-      payload: null
-    } as SuccessResponseModel<null>);
+      payload: createdFoo
+    } as SuccessResponseModel<IFooCreateOutputDTO>);
   }
 }
 

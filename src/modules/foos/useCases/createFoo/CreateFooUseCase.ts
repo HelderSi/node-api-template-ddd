@@ -1,10 +1,9 @@
 import { inject, injectable } from 'tsyringe'
 import { AppError } from "shared/errors/AppError";
 import { IFoosRepository } from "../../repositories/IFoosRepository";
+import { IFooCreateInputDTO } from 'modules/foos/dtos/IFooCreateInputDTO';
+import { IFooCreateOutputDTO } from 'modules/foos/dtos/IFooCreateOutputDTO';
 
-interface IRequest {
-  name: string;
-}
 
 @injectable()
 class CreateFooUseCase {
@@ -18,7 +17,7 @@ class CreateFooUseCase {
     private foosRepository: IFoosRepository
   ) { }
 
-  async execute({ name }: IRequest): Promise<void> {
+  async execute({ name }: IFooCreateInputDTO): Promise<IFooCreateOutputDTO> {
     const fooAlreadyExists = await this.foosRepository.findByName(name);
 
     /**
@@ -31,7 +30,9 @@ class CreateFooUseCase {
       throw new AppError("Foo already exists!", 400);
     }
 
-    await this.foosRepository.create({ name });
+    const createdFoo = await this.foosRepository.create({ name });
+
+    return createdFoo;
   }
 }
 

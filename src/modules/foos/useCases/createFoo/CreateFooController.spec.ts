@@ -10,6 +10,7 @@ describe('Create Foo Controller', () => {
             name: "Supertest"
         })
         expect(response.status).toBe(201)
+        expect(response.body.payload.id).toBeDefined()
     })
 
     it('should response with 400 when trying to save duplicated foo', async () => {
