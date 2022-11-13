@@ -7,3 +7,5 @@
 /tests_coverage
 
 .env
+
+.DS_Store
